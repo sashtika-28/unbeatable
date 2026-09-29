@@ -1,0 +1,243 @@
+/* Placement Preparation and Tracking System - SRS Diagrams Showcase Stylesheet */
+
+.diagrams-layout {
+  display: grid;
+  grid-template-columns: 280px 1fr;
+  gap: 1.5rem;
+  align-items: start;
+}
+
+/* Diagrams Selector Navigation */
+.diagram-sidebar-list {
+  background: var(--bg-card);
+  border: 1px solid var(--border-card);
+  border-radius: var(--radius-lg);
+  padding: 1rem;
+  display: flex;
+  flex-direction: column;
+  gap: 0.4rem;
+  max-height: calc(100vh - 180px);
+  overflow-y: auto;
+  position: sticky;
+  top: 90px;
+}
+
+.diagram-category-heading {
+  font-size: 0.72rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  color: var(--text-dim);
+  padding: 0.6rem 0.5rem 0.2rem;
+}
+
+.diagram-item-btn {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  padding: 0.65rem 0.85rem;
+  background: transparent;
+  border: 1px solid transparent;
+  border-radius: var(--radius-md);
+  color: var(--text-muted);
+  font-size: 0.84rem;
+  font-weight: 500;
+  cursor: pointer;
+  text-align: left;
+  transition: all var(--transition-fast);
+  width: 100%;
+}
+
+.diagram-item-btn:hover {
+  background: var(--bg-card-hover);
+  color: var(--text-main);
+}
+
+.diagram-item-btn.active {
+  background: rgba(99, 102, 241, 0.15);
+  border-color: rgba(99, 102, 241, 0.35);
+  color: var(--primary-light);
+  font-weight: 600;
+}
+
+.diagram-num-tag {
+  width: 20px;
+  height: 20px;
+  border-radius: var(--radius-sm);
+  background: rgba(255, 255, 255, 0.08);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 0.7rem;
+  font-family: var(--font-mono);
+  color: var(--text-dim);
+  flex-shrink: 0;
+}
+
+.diagram-item-btn.active .diagram-num-tag {
+  background: var(--primary);
+  color: #fff;
+}
+
+/* Main Diagram Stage */
+.diagram-stage {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+}
+
+.diagram-viewport-card {
+  background: var(--bg-card);
+  border: 1px solid var(--border-card);
+  border-radius: var(--radius-lg);
+  padding: 1.5rem;
+  position: relative;
+  overflow: hidden;
+}
+
+.diagram-toolbar {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 1.25rem;
+  padding-bottom: 1rem;
+  border-bottom: 1px solid var(--border-subtle);
+  flex-wrap: wrap;
+  gap: 0.75rem;
+}
+
+.diagram-type-badge {
+  font-family: var(--font-mono);
+  font-size: 0.75rem;
+  background: rgba(99, 102, 241, 0.15);
+  color: var(--primary-light);
+  padding: 0.25rem 0.65rem;
+  border-radius: var(--radius-sm);
+  border: 1px solid rgba(99, 102, 241, 0.3);
+}
+
+.diagram-actions-group {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.diagram-render-area {
+  min-height: 480px;
+  background: rgba(15, 23, 42, 0.95);
+  border: 1px solid var(--border-subtle);
+  border-radius: var(--radius-md);
+  padding: 2rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: auto;
+  position: relative;
+}
+
+/* Light backdrop option for academic B&W diagrams */
+.diagram-render-area.light-mode {
+  background: #ffffff;
+  color: #0f172a;
+}
+.diagram-render-area.light-mode pre {
+  color: #0f172a;
+}
+.diagram-render-area.light-mode text {
+  fill: #0f172a !important;
+}
+
+.diagram-render-area svg {
+  max-width: 100%;
+  height: auto;
+  transition: transform 0.2s ease;
+}
+
+/* Pre-formatted ASCII / UML Fallback */
+.ascii-diagram-box {
+  font-family: var(--font-mono);
+  font-size: 0.85rem;
+  line-height: 1.35;
+  color: #38bdf8;
+  white-space: pre;
+  overflow-x: auto;
+  padding: 1rem;
+  text-align: left;
+}
+
+/* Diagram Spec & Academic Details */
+.diagram-spec-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 1.25rem;
+}
+
+.spec-box {
+  background: var(--bg-card);
+  border: 1px solid var(--border-card);
+  border-radius: var(--radius-md);
+  padding: 1.25rem;
+}
+
+.spec-box-title {
+  font-size: 0.85rem;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  color: var(--primary-light);
+  margin-bottom: 0.6rem;
+  display: flex;
+  align-items: center;
+  gap: 0.4rem;
+}
+
+.spec-box p, .spec-box ul {
+  font-size: 0.85rem;
+  color: var(--text-muted);
+  line-height: 1.55;
+}
+
+.spec-box ul {
+  padding-left: 1.2rem;
+}
+
+/* Code Snippet Box */
+.code-container {
+  background: #0b0f19;
+  border: 1px solid var(--border-subtle);
+  border-radius: var(--radius-md);
+  margin-top: 1rem;
+  overflow: hidden;
+}
+
+.code-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0.6rem 1rem;
+  background: rgba(30, 41, 59, 0.6);
+  border-bottom: 1px solid var(--border-subtle);
+  font-family: var(--font-mono);
+  font-size: 0.78rem;
+  color: var(--text-muted);
+}
+
+.code-body {
+  padding: 1rem;
+  font-family: var(--font-mono);
+  font-size: 0.82rem;
+  color: #e2e8f0;
+  overflow-x: auto;
+  white-space: pre;
+  max-height: 320px;
+}
+
+@media (max-width: 900px) {
+  .diagrams-layout {
+    grid-template-columns: 1fr;
+  }
+  .diagram-sidebar-list {
+    max-height: 250px;
+    position: static;
+  }
+}

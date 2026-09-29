@@ -1,0 +1,22 @@
+# Dependencies
+node_modules/
+backend/node_modules/
+
+# Environment and sensitive credentials
+.env
+backend/.env
+*.local
+
+# Temporary / Scratch directories
+scratch/
+.system_generated/
+*.log
+
+# Java build output
+backend-java/bin/
+*.class
+
+# Operating System Files
+.DS_Store
+Thumbs.db
+desktop.ini

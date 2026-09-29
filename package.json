@@ -1,0 +1,17 @@
+{
+  "name": "placement-preparation-system",
+  "version": "1.0.0",
+  "description": "Placement Preparation and Tracking System",
+  "main": "backend/server.js",
+  "scripts": {
+    "start": "node backend/server.js",
+    "dev": "node --watch backend/server.js"
+  },
+  "keywords": [
+    "placement",
+    "tracking",
+    "supabase"
+  ],
+  "author": "",
+  "license": "MIT"
+}
